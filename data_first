@@ -1,0 +1,60 @@
+Online learning platform
+
+Courses
+Title:string [unique]
+
+body:text
+
+
+has_many lessons
+
+
+Lessons
+title:string [unique]
+
+body:text
+
+belongs_to courses
+
+
+____Profile Tab
+
+
+
+belongs_to user
+
+
+
+
+
+
+_____Hacker News
+
+Posts
+title:string
+
+body:string (link)
+
+user_id: int
+child_id: int
+
+has_many :comments
+belongs_to :user
+
+
+Users
+username:string [unique]
+
+has_many :posts AND :comments
+
+
+Comments
+
+body:text
+
+user_id: int
+parent_id:int
+
+belongs_to user
+
+belongs_tp post OR comment

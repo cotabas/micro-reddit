@@ -1,0 +1,41 @@
+Posts
+
+title:string
+
+body:text
+
+user_id:int
+
+content_id:int [unique]
+
+has_many :comments
+
+belongs_to :user
+
+
+
+
+Comments
+
+body:text
+
+user_id:int
+
+content_id:int [unique]
+
+parent_id:int
+
+belongs_to :user
+
+has_many :posts AND :comments
+
+
+
+
+Users
+
+username:string [unique]
+
+password:string 
+
+has_many :posts AND :comments
